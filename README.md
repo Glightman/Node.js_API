@@ -3,7 +3,7 @@
 
  # Esse projeto é apenas uma demonstração de criação de usuários, para acessar as rotas de criação é necessário passar pelas validções de autenticação primeiro
 
-## ESSA É UMA APLICAÇÃO WEB API CONSTRUÍDA EM *_NODE.JS_* USANDO O *_EXPRESS_* FRAMEWORK. A CONECÇÃO COM BANCO DE DADOS FOI POR DO *_MONGO DB._* E AQUI EU USEI TAMBÉM O *_JWT AUTHENTICATION._*
+## ESSA É UMA APLICAÇÃO WEB API CONSTRUÍDA EM *_NODE.JS_* USANDO O *_EXPRESS_* FRAMEWORK. A CONECÇÃO COM BANCO DE DADOS FOI FEITA PELO *_MONGO DB._* E AQUI EU USEI TAMBÉM O *_JWT AUTHENTICATION._*
 
 - Iniciamos nossa aplicação por criar um arquivo *_.json_* com as dependências que serão utilizadas
 
