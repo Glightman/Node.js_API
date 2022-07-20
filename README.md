@@ -20,3 +20,18 @@
 ```
 /> npm install mongoose
 ```
+### Nessa API eu usei o método de Models View Controllers (MVC). Depois de criar nossa aplicação nesse modelo e fazer as devidas conecções com o banco de dados, fiz algumas lapidações para que o 'password' do usuário não seja exibido ao fazer requisições:
+
+- depois de escrever a linha que cria um usuário no banco de dados, nós ocutamos a senha dele com o código abaixo:
+
+```
+User.password = undefined;
+```
+- Mas além disso é necessário também encryptar a senha desse usuário para que ela não seja exibida no banco de dados. Para isso precisamos instalar mais uma dependência:
+
+```
+/> npm install bcryptjs
+```
+
+
+
