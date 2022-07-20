@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://nodejs_api-GabsDev:Kaga@2019@cluster0.qrcqlwt.mongodb.net/?retryWrites=true&w=majority", {}, (error)=>{
+mongoose.connect("mongodb+srv://nodejs_API:9igcc32A5h2N9Vsk@nodejsapi.lhpgyks.mongodb.net/?retryWrites=true&w=majority", {}, (error)=>{
     if(error){
         console.log('Falaha ao atenticar com mongodb');
         console.log(error);
