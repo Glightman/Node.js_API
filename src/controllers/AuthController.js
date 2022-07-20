@@ -7,6 +7,16 @@ const UserModel = require("../models/User");
 
 const router = express.Router();
 
+const generateToken = (user = {}) => {
+    return jwt.sign({
+        id: user.id,
+        name: user.name
+    }, authConfig.secret, {
+        expiresIn: 86400
+    });
+    
+}
+
 router.post("/register", async(req, res) => {
     const {email} = req.body;
     if(await UserModel.findOne({email})){
@@ -16,14 +26,15 @@ router.post("/register", async(req, res) => {
         })
     }
 
-    const User = await UserModel.create(req.body);
+    const user = await UserModel.create(req.body);
 
-    User.password = undefined;
-    console.log(req.body);
+    user.password = undefined;
+
     return res.json({
         error: false,
         message: "Resgistrado com sucesso!",
-        data: User
+        user,
+        token: generateToken(user)
     });
 })
 
@@ -47,17 +58,10 @@ router.post("/authenticate", async(req, res) => {
     }
 
     user.password = undefined;
-
-    const token = jwt.sign({
-        id: user.id,
-        name: user.name
-    }, authConfig.secret, {
-        expiresIn: 86400
-    });
     
     return res.json({
         user,
-        token
+        token: generateToken(user)
     });
     
 })
